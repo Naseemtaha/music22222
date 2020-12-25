@@ -1,11 +1,7 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-client.on('ready', () => {
-  client.user.setGame(` By The Geniuses .`,'https://www.twitch.tv/v5bz');
-  console.log('---------------');
-  console.log('Bot Is Online')
-  console.log('---------------')
-});
+
+console.log("Welcome Again !");
 
 var stringToCheck = content;
 stringToCheck.replace(/\s+/g, '').toLowerCase();
@@ -19,11 +15,13 @@ client.on("message", message => {
     for (var i = 0; i < noNoWords.length; i++) {
         if (content.includes(noNoWords[i])){  
             message.delete();
-            break
+            break();
         }
     }
-  client.login(process.env.BOT_TOKEN);
 }
+ 
+client.login(process.env.BOT_TOKEN);
+
 
 
 
