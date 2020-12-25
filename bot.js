@@ -15,7 +15,7 @@ client.on("message", message => {
     for (var i = 0; i < noNoWords.length; i++) {
         if (content.includes(noNoWords[i])){  
             message.delete();
-            break();
+            break
         }
     }
 })
