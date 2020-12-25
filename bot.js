@@ -1,31 +1,16 @@
-
-cconst Discord = require("discord.js");
+const Discord = require("discord.js");
 const client = new Discord.Client();
 client.on('ready', () => {
   client.user.setGame(` By The Geniuses .`,'https://www.twitch.tv/v5bz');
   console.log('---------------');
-  console.log(' Bot Is Online')
+  console.log('Bot Is Online')
   console.log('---------------')
 });
-client.on('message', message => {
-     if (message.content === ".servers") {
-     let embed = new Discord.RichEmbed()
-  .setColor("#0000FF")
-  .addField("**Server: **" , client.guilds.size)
-  message.channel.sendEmbed(embed);
-
-
-
-
-
-
-
-
 
 var stringToCheck = content;
 stringToCheck.replace(/\s+/g, '').toLowerCase();
 
-const noNoWords = ["ex", "ex"];
+const noNoWords = ["wetback", "p0rn", "cockface", "shittings", "buttfucka", "douchebag", "cumshot", "poop", "goatse", "clits", "fuckwhit", "faggs", "slutbag", "viagra", "butt-pirate", "fingerfucks ", "kondums", "t1tties", "feltch", "beastiality", "heshe", "dickslap", "testical", "piss", "cipa", "kawk", "kike", "cuntlicking ", "humping", "cocksuka", "v14gra", "cyberfuck ", "fagtard", "fucks", "clitface", "assfucker", "shit", "blow job", "l3itch", "5hit", "bastard", "scrotum", "d1ck", "phuq", "phonesex", "jigaboo", "fuckoff", "bitchers", "breasts", "f u c k e r", "willy", "gooch", "shitspitter", "ho", "fagfucker", "twunter", "assbanger", "cocksucking", "shithole", "cl1t", "cunnilingus", "fistfucked ", "hardcoresex ", "douche", "honkey", "chinc", "c0cksucker", "asspirate", "flange", "fanny", "smut", "fux0r", "dickbeaters", "dickface", "kunt", "faggitt", "sadist", "f u c k", "lusting", "jack-off ", "gayass", "dumbfuck", "bullshit", "cocksmith", "cockknoker", "balls", "muff", "asssucker", "heeb", "ejaculatings", "niglet", "asslick", "titt", "wop", "cyberfucker", "arsehole", "bollocks", "hard on", "motherfuck", "motherfucker", "fucker", "kondum", "tits", "cumguzzler", "b1tch", "fellatio", "whoreface", "knobead", "mofo", "queer", "dickmilk", "m0f0", "slut", "whore", "spic", "cockmongruel", "gayfuck", "lmfao", "teez", "jungle bunny", "fcuk", "jap", "asswhole", "cumdumpster", "jerk-off ", "puto", "fuckhole", "prick", "fag", "hoe", "thundercunt", "ejaculating ", "wanker", "renob", "l3i+ch", "assshole", "homodumbshit", "fingerfucking ", "fuckstick", "pusse", "fucked", "phuks", "cawk", "munging", "cumjockey", "phuck", "whoar", "assmuncher", "s_h_i_t", "fuckme ", "lezzie", "muffdiver", "splooge", "orgasms ", "tittywank", "asscracker", "niggers ", "lesbo", "twunt", "tittie5", "dicksucker", "cuntlicker", "jerk off", "assfukka", "bitchass", "nobjokey", "son-of-a-bitch", "gaywad", "fellate", "fcuking", "jackoff", "punanny", "damn", "pissoff ", "fucking", "cocksmoker", "motherfuckin", "bitcher", "clit", "willies", "nigg3r", "fuckbag", "cyberfucking ", "phuk", "cuntlicker ", "cyberfuc", "masochist", "panooch", "assgoblin", "lmao", "kums", "niggah", "fecker", "lust", "mo-fo", "cockjockey", "bollox", "fuckwad", "doosh", "dumshit", "twatwaffle", "mick", "shits", "cockhead", "titfuck", "booobs", "hoer", "knobhead", "dickmonger", "gangbanged ", "rimjob", "assbite", "chode", "dickjuice", "f4nny", "dickweasel", "n1gga", "vag", "coochie", "ejaculation", "fagbag", "bitchin", "scrote", "shemale", "ballsack", "phukking", "junglebunny", "cunillingus", "douche-fag", "dicks", "bitchy", "knobed", "coochy", "shitty", "cunilingus", "nigga", "god-dam", "pissin ", "porch monkey", "dirsa", "master-bate", "gook", "cuntface", "cocksucked ", "cunthole", "masterbat3", "pissing", "buttfucker", "masterb8", "dookie", "fooker", "bi+ch", "pimpis", "cummer", "kooch", "pollock", "dickweed", "assshit", "mcfagget", "gayfuckist", "nutsack", "cunt", "hoar", "arrse", "titwank", "sex", "butt plug", "a55", "gaydo", "blowjob", "masterbat*", "assbandit", "handjob", "cockmunch", "assmonkey", "phuked", "kummer", "lesbian", "mutherfucker", "dumass", "ass-fucker", "cocksukka", "sluts", "shittiest", "shiznit", "nobhead", "shitface", "shitass", "punta", "porn", "buceta", "pussies", "dumbshit", "anus", "dogging", "s.o.b.", "assjacker", "mother fucker", "m45terbate", "fuks", "knob end", "penisfucker", "dickbag", "wang", "vagina", "penis", "orgasm", "pron", "f_u_c_k", "dog-fucker", "crap", "asshole", "cums", "pisses ", "fuckboy", "gangbangs ", "ass-pirate", "coon", "ma5terbate", "ma5terb8", "boobs", "fucknutt", "nigg4h", "dickfucker", "mothafuckers", "sh!+", "bitches", "sh1t", "faggot", "fukker", "shitting", "fatass", "fukwhit", "mothafuckings", "fags", "snatch", "shitstain", "buttmunch", "unclefucker", "bunny fucker", "cyberfucked ", "pornography", "paki", "fingerfucker ", "fook", "m0fo", "cuntlick ", "bollok", "shited", "asscock", "asshead", "nut sack", "gaylord", "pissed", "dickfuck", "twatlips", "orgasim ", "cockburger", "dildos", "beaner", "fistfuckers ", "nob", "shag", "shitfuck", "shitbreath", "fanyy", "asswipe", "rectum", "God", "shitdick", "wank", "ass-hat", "cumtart", "god-damned", "pissflaps", "phukked", "asslicker", "smegma", "pornos", "boob", "shitted", "queef", "assmunch", "scroat", "dick", "tard", "fuckin", "fucktard", "fuk", "twats", "omg", "v1gra", "homo", "motherfuckka", "fingerfuck ", "bollock", "smeg", "cockshit", "fagot", "pussylicking", "bugger", "fannyflaps", "felching", "knobjocky", "gay", "nob jokey", "flamer", "masterbate", "b!tch", "buttplug", "motherfuckers", "shithouse", "bestial", "fagging", "negro", "bum", "fuckwit", "hoare", "ballbag", "donkeyribber", "tosser", "faggotcock", "xrated", "gangbang", "fuckup", "phuking", "carpet muncher", "cock-sucker", "motherfuckings", "cockmaster", "cock", "blowjobs", "ar5e", "ejaculated", "mothafucker", "twathead", "pecker", "mothafucks", "s hit", "mothafuckaz", "niggas", "vulva", "assface", "cocks", "arse", "anal", "shite", "doggin", "cockfucker", "cok", "cuntslut", "screwing", "pussys ", "nigger", "tittiefucker", "cuntrag", "fistfucks ", "muther", "duche", "assholes", "assfuck", "boiolas", "n1gger", "shaggin", "kock", "rimjaw", "b17ch", "doochbag", "polesmoker", "jizm ", "fucknut", "dyke", "dickwod", "cocknose", "ass", "fistfucking ", "shitbrains", "dago", "assclown", "motherfucking", "knobjokey", "camel toe", "dipshit", "bitching", "God damn", "fuckingshitmotherfucker", "shiting", "bestiality", "skank", "cyberfuckers", "nazi", "kum", "titties", "turd", "dink", "muthafecker", "shitfaced", "shiz", "assbag", "fuckass", "poonany", "fuckface", "cum", "nobjocky", "pussi", "fcuker", "bampot", "knob", "clitoris", "brotherfucker", "masterbations", "shitter", "skeet", "spac", "fistfuckings ", "fingerfuckers", "kumming", "bitchtits", "whorebag", "fuckbrain", "fudge packer", "cockmongler", "bloody", "hell", "fuckersucker", "tw4t", "labia", "twat", "minge", "cooter", "fannyfucker", "fuck", "asshopper", "bellend", "tittyfuck", "gaytard", "poontang", "niggaz", "shitey", "cockmonkey", "knobend", "bitch", "skullfuck", "pisser", "cocknugget", "pissers", "shitings", "pricks ", "sh!t", "fagots", "fingerfucked ", "poonani", "gringo", "tit", "jism", "cocksuck ", "mothafuck", "mothafucka", "mothafuckas", "carpetmuncher", "pube", "douchewaffle", "booooooobs", "fuckbutt", "shitbagger", "bumblefuck", "ruski", "cumslut", "cocksucks ", "wanky", "cox", "mof0", "pawn", "gaysex", "cumbubble", "horny", "peckerhead", "fukkin", "jizz", "asses", "horniest", "teets", "xxx", "choad", "cracker", "w00se", "kyke", "goddamned", "motherfucks", "dlck", "asswad", "dinks", "fuckheads", "beastial", "5h1t", "assnigger", "mutha", "schlong", "fistfuck", "fistfucker ", "shi+", "cumming", "deggo", "rimming", "t1tt1e5", "retard", "cnut", "cockass", "dumb ass", "niggers", "b00bs", "kootch", "kunilingus", "ejaculate", "pigfucker", "shithead", "cokmuncher", "dike", "fudgepacker", "mothafucking ", "porno", "butthole", "fux", "fucka", "mothafuckin", "fuckings", "dickwad", "cocksucker", "butt", "masturbate", "cockbite", "mothafucked ", "dildo", "clitfuck", "4r5e", "numbnuts", "sand nigger", "jiz ", "cunnie", "booooobs", "wtf", "shitty ", "shagging", "pussy", "faggit", "cyalis", "cockmuncher", "dumbass", "goddamnit", "porchmonkey", "queerbait", "fuker", "penispuffer", "coksucka", "shitters ", "clusterfuck", "hotsex", "goddamn", "testicle", "fuckhead", "spunk", "ejakulate", "jackass", "fukwit", "gaybob", "hore", "feck", "motherfucked", "chink", "poon", "vjayjay", "fuckers", "semen", "shagger", "boner", "shitbag", "asshat", "cunts", "muthafuckker", "twatty", "Goddamn", "c0ck", "orgasims ", "boooobs", "guido", "dickhole", "queerhole", "masterbation", "sandnigger", "fuckwitt", "jerk", "shitfull", "spick", "biatch", "pissed off", "shitcunt", "dickhead", "ejaculates ", "a_s_s"];
 
 client.on("message", message => {
     var content = message.content;
@@ -37,6 +22,7 @@ client.on("message", message => {
             break
         }
     }
+  client.login(process.env.BOT_TOKEN);
 }
 
 
@@ -45,4 +31,7 @@ client.on("message", message => {
 
 
 
-client.login(process.env.BOT_TOKEN);
+
+
+
+
